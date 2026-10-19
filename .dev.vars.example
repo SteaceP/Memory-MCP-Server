@@ -1,0 +1,6 @@
+# Local development environment secrets for Cloudflare Wrangler
+# Copy this file to .dev.vars (which is ignored by Git) and customize your values:
+# cp .dev.vars.example .dev.vars
+
+# Generate a secure token with: openssl rand -hex 32
+API_AUTH_TOKEN="your-super-secure-shared-secret-token"

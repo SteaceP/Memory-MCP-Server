@@ -1,0 +1,47 @@
+{
+  "name": "remote-mcp-memory",
+  "version": "1.1.0",
+  "description": "Remote MCP memory server on Cloudflare Workers (D1 + Vectorize + Workers AI)",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "cf-typegen": "wrangler types",
+    "db:migrate": "wrangler d1 migrations apply mcp-memory-db --remote",
+    "db:migrate:local": "wrangler d1 migrations apply mcp-memory-db --local",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mcp",
+    "cloudflare",
+    "server",
+    "remote-mcp-memory"
+  ],
+  "author": "Steacy Paquette",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steacep/remote-mcp-memory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/steacep/remote-mcp-memory/issues"
+  },
+  "type": "module",
+  "dependencies": {
+    "zod": "^4.6.7",
+    "@modelcontextprotocol/server": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.151.2"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "workerd": true
+  }
+}

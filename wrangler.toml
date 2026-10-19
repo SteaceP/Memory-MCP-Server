@@ -1,0 +1,25 @@
+name = "remote-mcp-memory"
+main = "src/index.ts"
+compatibility_date = "2026-10-19"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mcp-memory-db"
+database_id = "bd6c2bd6-8c93-44d4-a7d7-f828a962ce29"
+migrations_dir = "migrations"
+
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "mcp-memory-index"
+remote = true # Vectorize has no local simulator; `wrangler dev` uses the real index
+
+[ai]
+binding = "AI"
+remote = true
+
+[observability]
+enabled = true
+
+# Optional: restrict browser origins (non-browser MCP clients send no Origin and are unaffected).
+# [vars]
+# ALLOWED_ORIGINS = "https://claude.ai,https://chatgpt.com"
